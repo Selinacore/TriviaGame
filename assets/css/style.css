@@ -1,6 +1,18 @@
-/* general */
+
 body {
     font-family: 'Kelly Slab', cursive;
     background-image: url ("assets/images/darkspooky.jpg");
+}
+
+
+
+/* general */
+
+
+
+
+/* divs */
+#content {
     text-align: center;
+
 }

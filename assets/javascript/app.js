@@ -6,6 +6,8 @@
 
 
 $(document).ready( function() {
+    $("#start").click(function() {
+
 // trivia questions
 
 var questions = [
@@ -49,30 +51,31 @@ var wrong = 0;
 var none = 0;  //unanswered
 
 
+// value for timer
+var number = 60;
+
 // click to start game
-$("#start").on("click", function() {
+
+$("#start").on("click", start);  // starts the game
+$("#submit").on("click", finish);  // submits answers
+$("#restart").on("click", restart);  // restarts the games 
    
-   })
 
+// timer functions
 
-//  Set up the timer.
+function start(){
+    counter = setInterval(timer, 60 * 1000);
 
-
-    var timeRem = $("#time-left")
-    function start()
-        timeRem = setTimeout (60 * 1000);
-    
-    function timer() {
-        timeRem--;
-        $("#time-left").html("<h3>60 seconds remaining</h3>");
-        console.log("60 seconds remaining");
+}
+function timer(){
+    number--
+    $("time-left").html("<h3>" + number + "</h3>");
+    if (number === 0){
+        alert ("Times Up!");
+        stop()
     }
+}
 
-
-      
-    
-    
 
     
-
 });
